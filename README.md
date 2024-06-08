@@ -1,1 +1,1 @@
-# rock-paper-scissors
+5 round rock-paper-scissors game against computer.
