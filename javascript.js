@@ -10,57 +10,107 @@ function getComputerChoice() {
     }
 }
 
-function getHumanChoice() {
-    let choice = prompt('rock, paper or scissors: ');  
-    return choice;
-}
+let humanChoice = '';
 
 let humanScore = 0;
 let computerScore = 0;
 
-function playRound() {
-    let humanChoice = getHumanChoice();
+let humanScoreTracker = document.querySelector("#human");
+let computerScoreTracker = document.querySelector("#computer");
+
+function playRound(str) {
     let computerChoice = getComputerChoice();
 
     if (humanChoice === 'rock' && computerChoice === 'rock') {
-        console.log('Tie!');
+        alert("Tie!");
     } else if (humanChoice === 'rock' && computerChoice === 'paper') {
-        console.log('You lose! Paper beats Rock.');
+        alert('You lose! Paper beats Rock.');
         computerScore++;
+        computerScoreTracker.innerHTML = 'Computer: ' + computerScore;
     } else if (humanChoice === 'rock' && computerChoice === 'scissors') {
-        console.log('You win! Rock beats Scissors.');
+        alert('You win! Rock beats Scissors.');
         humanScore++;
+        humanScoreTracker.innerHTML = 'You: ' + humanScore;
     } else if (humanChoice === 'paper' && computerChoice === 'rock') {
-        console.log('You win! Paper beats Rock.');
+        alert('You win! Paper beats Rock.');
         humanScore++;
+        humanScoreTracker.innerHTML = 'You: ' + humanScore;
     } else if (humanChoice === 'paper' && computerChoice === 'paper') {
-        console.log('Tie!');
+        alert('Tie!');
     } else if (humanChoice === 'paper' && computerChoice === 'scissors') {
-        console.log('You lose! Scissors beats Paper.');
+        alert('You lose! Scissors beats Paper.');
         computerScore++;
+        computerScoreTracker.innerHTML = 'Computer: ' + computerScore;
     } else if (humanChoice === 'scissors' && computerChoice === 'rock') {
-        console.log('You lose! Rock beats Scissors.');
+        alert('You lose! Rock beats Scissors.');
         computerScore++;
+        computerScoreTracker.innerHTML = 'Computer: ' + computerScore;
     } else if (humanChoice === 'scissors' && computerChoice === 'paper') {
-        console.log('You win! Scissors beats Paper.');
+        alert('You win! Scissors beats Paper.');
         humanScore++;
+        humanScoreTracker.innerHTML = 'You: ' + humanScore;
     } else if (humanChoice === 'scissors' && computerChoice === 'scissors') {
-        console.log('Tie!');
+        alert('Tie!');
     }
 }
 
-function playGame() {
-    for (let i = 0; i < 5; i++) {
-        playRound();
-    }
+let rock = document.querySelector("#rock");
+let paper = document.querySelector("#paper");
+let scissors = document.querySelector("#scissors");
 
-    if (humanScore < computerScore) {
-        console.log('Computer Wins!');
-    } else if (humanScore > computerScore) {
-        console.log('You Win!');
-    } else {
-        console.log('Tie!');
-    }
-}
+rock.addEventListener("click", () => {
+    humanChoice = 'rock';
+    playRound(humanChoice);
 
-playGame();
+    if (humanScore === 5) {
+        humanScore = 0;
+        computerScore = 0;
+        alert("You reached 5. You win!");
+        humanScoreTracker.innerHTML = 'You: ' + humanScore;
+        computerScoreTracker.innerHTML = 'Computer: ' + computerScore;
+    } else if (computerScore === 5) {
+        humanScore = 0;
+        computerScore = 0;
+        alert("Computer reached 5. Computer wins!");
+        humanScoreTracker.innerHTML = 'You: ' + humanScore;
+        computerScoreTracker.innerHTML = 'Computer: ' + computerScore;
+    }
+});
+
+paper.addEventListener("click", () => {
+    humanChoice = 'paper';
+    playRound(humanChoice);
+
+    if (humanScore === 5) {
+        humanScore = 0;
+        computerScore = 0;
+        alert("You reached 5. You win!");
+        humanScoreTracker.innerHTML = 'You: ' + humanScore;
+        computerScoreTracker.innerHTML = 'Computer: ' + computerScore;
+    } else if (computerScore === 5) {
+        humanScore = 0;
+        computerScore = 0;
+        alert("Computer reached 5. Computer wins!");
+        humanScoreTracker.innerHTML = 'You: ' + humanScore;
+        computerScoreTracker.innerHTML = 'Computer: ' + computerScore;
+    }
+});
+
+scissors.addEventListener("click", () => {
+    humanChoice = 'scissors';
+    playRound(humanChoice);
+    
+    if (humanScore === 5) {
+        humanScore = 0;
+        computerScore = 0;
+        alert("You reached 5. You win!");
+        humanScoreTracker.innerHTML = 'You: ' + humanScore;
+        computerScoreTracker.innerHTML = 'Computer: ' + computerScore;
+    } else if (computerScore === 5) {
+        humanScore = 0;
+        computerScore = 0;
+        alert("Computer reached 5. Computer wins!");
+        humanScoreTracker.innerHTML = 'You: ' + humanScore;
+        computerScoreTracker.innerHTML = 'Computer: ' + computerScore;
+    }
+})
