@@ -26,29 +26,29 @@ function playRound(str) {
     } else if (humanChoice === 'rock' && computerChoice === 'paper') {
         alert('You lose! Paper beats Rock.');
         computerScore++;
-        computerScoreTracker.innerHTML = 'Computer: ' + computerScore;
+        computerScoreTracker.textContent = 'Computer: ' + computerScore;
     } else if (humanChoice === 'rock' && computerChoice === 'scissors') {
         alert('You win! Rock beats Scissors.');
         humanScore++;
-        humanScoreTracker.innerHTML = 'You: ' + humanScore;
+        humanScoreTracker.textContent = 'You: ' + humanScore;
     } else if (humanChoice === 'paper' && computerChoice === 'rock') {
         alert('You win! Paper beats Rock.');
         humanScore++;
-        humanScoreTracker.innerHTML = 'You: ' + humanScore;
+        humanScoreTracker.textContent = 'You: ' + humanScore;
     } else if (humanChoice === 'paper' && computerChoice === 'paper') {
         alert('Tie!');
     } else if (humanChoice === 'paper' && computerChoice === 'scissors') {
         alert('You lose! Scissors beats Paper.');
         computerScore++;
-        computerScoreTracker.innerHTML = 'Computer: ' + computerScore;
+        computerScoreTracker.textContent = 'Computer: ' + computerScore;
     } else if (humanChoice === 'scissors' && computerChoice === 'rock') {
         alert('You lose! Rock beats Scissors.');
         computerScore++;
-        computerScoreTracker.innerHTML = 'Computer: ' + computerScore;
+        computerScoreTracker.textContent = 'Computer: ' + computerScore;
     } else if (humanChoice === 'scissors' && computerChoice === 'paper') {
         alert('You win! Scissors beats Paper.');
         humanScore++;
-        humanScoreTracker.innerHTML = 'You: ' + humanScore;
+        humanScoreTracker.textContent = 'You: ' + humanScore;
     } else if (humanChoice === 'scissors' && computerChoice === 'scissors') {
         alert('Tie!');
     }
@@ -66,14 +66,14 @@ rock.addEventListener("click", () => {
         humanScore = 0;
         computerScore = 0;
         alert("You reached 5. You win!");
-        humanScoreTracker.innerHTML = 'You: ' + humanScore;
-        computerScoreTracker.innerHTML = 'Computer: ' + computerScore;
+        humanScoreTracker.textContent = 'You: ' + humanScore;
+        computerScoreTracker.textContent = 'Computer: ' + computerScore;
     } else if (computerScore === 5) {
         humanScore = 0;
         computerScore = 0;
         alert("Computer reached 5. Computer wins!");
-        humanScoreTracker.innerHTML = 'You: ' + humanScore;
-        computerScoreTracker.innerHTML = 'Computer: ' + computerScore;
+        humanScoreTracker.textContent = 'You: ' + humanScore;
+        computerScoreTracker.textContent = 'Computer: ' + computerScore;
     }
 });
 
@@ -85,14 +85,14 @@ paper.addEventListener("click", () => {
         humanScore = 0;
         computerScore = 0;
         alert("You reached 5. You win!");
-        humanScoreTracker.innerHTML = 'You: ' + humanScore;
-        computerScoreTracker.innerHTML = 'Computer: ' + computerScore;
+        humanScoreTracker.textContent = 'You: ' + humanScore;
+        computerScoreTracker.textContent = 'Computer: ' + computerScore;
     } else if (computerScore === 5) {
         humanScore = 0;
         computerScore = 0;
         alert("Computer reached 5. Computer wins!");
-        humanScoreTracker.innerHTML = 'You: ' + humanScore;
-        computerScoreTracker.innerHTML = 'Computer: ' + computerScore;
+        humanScoreTracker.textContent = 'You: ' + humanScore;
+        computerScoreTracker.textContent = 'Computer: ' + computerScore;
     }
 });
 
@@ -104,13 +104,13 @@ scissors.addEventListener("click", () => {
         humanScore = 0;
         computerScore = 0;
         alert("You reached 5. You win!");
-        humanScoreTracker.innerHTML = 'You: ' + humanScore;
-        computerScoreTracker.innerHTML = 'Computer: ' + computerScore;
+        humanScoreTracker.textContent = 'You: ' + humanScore;
+        computerScoreTracker.textContent = 'Computer: ' + computerScore;
     } else if (computerScore === 5) {
         humanScore = 0;
         computerScore = 0;
         alert("Computer reached 5. Computer wins!");
-        humanScoreTracker.innerHTML = 'You: ' + humanScore;
-        computerScoreTracker.innerHTML = 'Computer: ' + computerScore;
+        humanScoreTracker.textContent = 'You: ' + humanScore;
+        computerScoreTracker.textContent = 'Computer: ' + computerScore;
     }
 })
